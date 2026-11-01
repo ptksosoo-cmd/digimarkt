@@ -1,0 +1,235 @@
+/* تنظیمات پایه و ریست */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    background-color: #1a1b1e; /* رنگ پس‌زمینه تیره */
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* منوی بالا */
+.navbar {
+    background-color: #111111;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: flex-start; /* در RTL یعنی سمت راست */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #cccccc;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+/* هدر سایت */
+.site-header {
+    background-image: url('header.png');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    position: relative;
+}
+
+/* یک لایه تاریک روی هدر برای خوانایی بهتر متن */
+.site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 2;
+    position: relative;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.header-text {
+    text-align: left; /* متن سمت چپ هدر */
+    direction: ltr; /* برای قرارگیری صحیح متن انگلیسی و فارسی کنار هم */
+}
+
+.header-text h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.header-text p {
+    font-size: 16px;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* بخش اصلی (گرید/فلکس) */
+.container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* مقاله سمت چپ */
+.main-article {
+    flex: 2; /* 2/3 فضا را می‌گیرد */
+    background-color: #222326;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.article-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.article-text {
+    font-size: 15px;
+    margin-bottom: 15px;
+    text-align: justify;
+    color: #b3b3b3;
+}
+
+.article-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* سایدبار سمت راست */
+.sidebar {
+    flex: 1; /* 1/3 فضا را می‌گیرد */
+}
+
+.widget {
+    margin-bottom: 40px;
+}
+
+.widget-title {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    border-right: 3px solid #3b82f6; /* خط آبی کنار عنوان */
+}
+
+/* ابر برچسب‌ها */
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background-color: transparent;
+    border: 1px solid #444;
+    color: #3b82f6;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background-color: #3b82f6;
+    color: #fff;
+    border-color: #3b82f6;
+}
+
+/* لیست پست‌های اخیر */
+.recent-posts {
+    list-style: none;
+}
+
+.recent-posts li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-right: 15px;
+}
+
+.recent-posts li::before {
+    content: '■';
+    position: absolute;
+    right: 0;
+    top: 2px;
+    font-size: 10px;
+    color: #555;
+}
+
+.recent-posts a {
+    color: #3b82f6;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: color 0.3s;
+}
+
+.recent-posts a:hover {
+    color: #60a5fa;
+}
+
+/* طراحی واکنش‌گرا (موبایل) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .site-header {
+        height: 200px;
+        padding: 0 20px;
+    }
+
+    .header-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .header-text {
+        text-align: center;
+    }
+
+    .header-text h1 {
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 60px;
+    }
+}
