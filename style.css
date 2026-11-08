@@ -10,6 +10,9 @@ body {
     background-color: #1a1b1e; /* رنگ پس‌زمینه تیره */
     color: #e0e0e0;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 a {
@@ -102,6 +105,8 @@ a {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
+    flex: 1;
+    width: 100%;
 }
 
 /* مقاله سمت چپ */
@@ -204,6 +209,63 @@ a {
     color: #60a5fa;
 }
 
+/* ============================
+   فوتر و لینک تلگرام
+   ============================ */
+.site-footer {
+    background-color: #111111;
+    border-top: 2px solid #3b82f6;
+    margin-top: 40px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-title {
+    font-size: 16px;
+    color: #cccccc;
+}
+
+.telegram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #229ED9; /* رنگ رسمی تلگرام */
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(34, 158, 217, 0.3);
+}
+
+.telegram-link:hover {
+    background-color: #1c85b8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(34, 158, 217, 0.5);
+}
+
+.telegram-icon {
+    width: 22px;
+    height: 22px;
+    fill: #ffffff;
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: #777;
+    margin-top: 10px;
+}
+
 /* طراحی واکنش‌گرا (موبایل) */
 @media (max-width: 768px) {
     .container {
@@ -231,5 +293,10 @@ a {
 
     .logo {
         width: 60px;
+    }
+
+    .telegram-link {
+        padding: 10px 20px;
+        font-size: 14px;
     }
 }
