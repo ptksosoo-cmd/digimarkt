@@ -258,6 +258,8 @@ a {
     width: 22px;
     height: 22px;
     fill: #ffffff;
+    flex-shrink: 0; /* جلوگیری از کشیده شدن آیکون */
+    display: inline-block;
 }
 
 .footer-copy {
